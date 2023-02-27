@@ -1,9 +1,9 @@
 # ImageToAsciiart
-Converts any picture or your live Webcam feed into ascii art.  Uses Javascript, P5.js, Asciiart repository and is based on the Coding Train Challenges. 
 
-Code: Inside the code directory you will find 2 example scrips and Preview Html files. 
+Converts any picture or your live Webcam feed into ASCII art or any static image into ASCII.  Uses Javascript, P5.js and the Asciiart repository.
 
-Advised improvements: Using a fix canvas to draw on which better pixel density.
+Code: Inside the code directory you will find 4 example scrips and Preview Html files. The advance files are more complex and feature rich (density, transitions and color).
 
-https://www.tetoki.eu/asciiart/
-https://thecodingtrain.com/
+![1677510422716](image/README/1677510422716.png "Sample from ASCII to WEbcam feed")
+
+![1677510477374](image/README/1677510477374.png "Sample from Image to ASCII")

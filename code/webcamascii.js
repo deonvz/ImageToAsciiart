@@ -5,10 +5,14 @@ const density = "Ñ@#W$9876543210?!abc;:+=-,._                    ";
 let video;
 let asciiDiv;
 
+function videoReady() {
+  console.log('Video ready');
+}
+
 function initCaptureDevice() {
   try {
-    video = createCapture(VIDEO);
-    video.size(120, 60);
+    video = createCapture(VIDEO, videoReady);
+    video.size(height, width);
     video.elt.setAttribute('playsinline', '');
     video.hide();
     console.log(
@@ -21,12 +25,14 @@ function initCaptureDevice() {
 }
 
 function setup() {
-  noCanvas();
+  //noCanvas();
+  createCanvas(640, 480);
   initCaptureDevice(); //  access to the camera;
   asciiDiv = createDiv();
 }
 
 function draw() {
+  image(video, 0, 0); // video
     video.loadPixels();
     let asciiImage = "";
     for (let j = 0; j < video.height; j++) {
@@ -41,8 +47,11 @@ function draw() {
         const c = density.charAt(charIndex);
         if (c == " ") asciiImage += "&nbsp;";
         else asciiImage += c;
+        text(asciiImage,j,i);
       }
-      asciiImage += '<br/>';
+      text('<br/>');
+      //asciiImage += '<br/>';
     }
     asciiDiv.html(asciiImage);
+    
 }
